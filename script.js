@@ -88,19 +88,24 @@ function shortenText1() {
 function performSearch1() {
     // Get the input element by its ID
   
-    //calls on shortenText for names
-    const input2 =shortenText1(searchInput1)
-
     // Get the value entered by the user
-    const searchTerm1 = input2.value.toLowerCase(); // Trim removes leading/trailing spaces
+    const searchTerm1 = searchInput1.value.toLowerCase(); // Trim removes leading/trailing spaces
     
-  
+  //calls on shortenText for currency
+    if (searchTerm1.length>20){
+    alert("Input too long! Please shorten input")
+    }
 
     // Perform the search
     for (let i = 0; i < dataset1.length; i++) {
         const currentItem = dataset1[i].toLowerCase(); // Convert to lowercase for case-insensitive search
         if (currentItem.includes(searchTerm1.toLowerCase())) {
             resultsList1.push(dataset1[i]);
+
+            // Limit the results to 5
+          if (resultsList1.length >= 5) {
+            break;
+          }
         }
     }
 
