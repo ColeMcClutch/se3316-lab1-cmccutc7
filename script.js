@@ -44,7 +44,7 @@ const dataset1 = [
 const dataset2 =[
   {country:'United States of America',code: 'USD'},
   {country:'Canada',code: 'CAD'},
-  {country:'United Kingdom',code: 'GDP'},
+  {country:'United Kingdom',code: 'GBP'},
   {country:'Japan',code:'JPY'},
   {country:'Austrailia',code:'AUD'},
   {country:'Italy' ,code:'EUR'},
@@ -92,14 +92,14 @@ function performSearch1() {
     const input2 =shortenText1(searchInput1)
 
     // Get the value entered by the user
-    const searchTerm1 = input2.value; // Trim removes leading/trailing spaces
+    const searchTerm1 = input2.value.toLowerCase(); // Trim removes leading/trailing spaces
     
   
 
     // Perform the search
     for (let i = 0; i < dataset1.length; i++) {
-        const currentItem = dataset1[i]
-        if (currentItem.includes(searchTerm1)) {
+        const currentItem = dataset1[i].toLowerCase(); // Convert to lowercase for case-insensitive search
+        if (currentItem.includes(searchTerm1.toLowerCase())) {
             resultsList1.push(dataset1[i]);
         }
     }
