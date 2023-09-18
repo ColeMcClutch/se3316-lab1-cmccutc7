@@ -127,10 +127,8 @@ function shortenText2() {
       // Shorten the value to 20 characters using substring or slice
       value2 = value2.substring(0, 3); // Using substring
     }
-    console.log(value2)
     // Update the input field with the shortened value
     searchInput2.value = value2;
-    console.log(searchInput2.value)
 
     return searchInput2.value.toLowerCase()
   }
@@ -140,16 +138,18 @@ function performSearch2(){
   
   // Get the value entered by the user
   const userInput2 = searchInput2.value.toLowerCase() // Convert to lowercase for search
-  
+
+
   //calls on shortenText for currency
-  const userInput3 = shortenText2()
-  console.log(userInput3)
+  if (userInput2.length>3){
+    alert("Input too long! Please shorten input")
+  }
 
   // Iterate through dataset2 and find matching results
   for (const value of dataset2) {
     const v1 = value.code.toLowerCase()
     const v2 = v1.toLowerCase()
-    if (v2.includes(userInput3)) {
+    if (v2.includes(userInput2)) {
       resultsList2.push(value.country + ": (" + value.code+")");
 
       // Limit the results to 5
