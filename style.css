@@ -1,0 +1,73 @@
+#submit1{
+  display:flex;
+  border: 1px solid;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  position: relative;
+  right: 20px;
+  
+}
+
+body{
+  background-color: green;
+}
+
+#submit2{
+  display:flex;
+  border: 1px solid;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  position: relative;
+  right: 20px;
+  
+}
+
+.coName{
+    display:flex;
+    align-items: center;
+}
+
+.cuName{
+  display:flex;
+  align-items:center;
+}
+
+/*Column spacing*/
+.column {
+  float: left;
+  width: 9.0%;
+  text-align:center;
+  margin-bottom: 16px;
+  border: 1px solid;
+  padding: 8px;
+  background-color: cyan;
+  font-family: syncopate;
+  font-size: 12px;
+}
+
+
+.index{
+  background-color: red;
+}
+
+.searchMethods{
+  border: 1px solid;
+  padding: 8px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  font-size: 36px;
+	font-family: papyrus;
+  text-align: center;
+  border: 1px solid;
+  padding: 8px;
+  text-align: center;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+}
