@@ -15,33 +15,8 @@ const resultsList2 = []
 
 
 
-
-//country data set
-const dataset1 = [
-    'United States of America',
-    'Canada',
-    'United Kingdom',
-    'Australia',
-    'India',
-    'Brazil',
-    'Russia',
-    'China',
-    'Saudi Arabia',
-    'South Africa',
-    'France',
-    'Germany',
-    'Japan',
-    'Mexico',
-    'Italy',
-    'Spain',
-    'Argentina',
-    'Nigeria',
-    'South Korea',
-    'Egypt'
-]
-
-//currency type set
-const dataset2 =[
+//country/currency type set
+const dataset =[
   {country:'United States of America',code: 'USD'},
   {country:'Canada',code: 'CAD'},
   {country:'United Kingdom',code: 'GBP'},
@@ -97,10 +72,10 @@ function performSearch1() {
     }
 
     // Perform the search
-    for (let i = 0; i < dataset1.length; i++) {
-        const currentItem = dataset1[i].toLowerCase(); // Convert to lowercase for case-insensitive search
+    for (let i = 0; i < dataset.length; i++) {
+        const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
         if (currentItem.includes(searchTerm1.toLowerCase())) {
-            resultsList1.push(dataset1[i]);
+            resultsList1.push(dataset[i].country);
 
             // Limit the results to 5
           if (resultsList1.length >= 5) {
@@ -151,7 +126,7 @@ function performSearch2(){
   }
 
   // Iterate through dataset2 and find matching results
-  for (const value of dataset2) {
+  for (const value of dataset) {
     const v1 = value.code.toLowerCase()
     const v2 = v1.toLowerCase()
     if (v2.includes(userInput2)) {
