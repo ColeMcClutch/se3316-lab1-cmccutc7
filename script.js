@@ -75,7 +75,7 @@ function performSearch1() {
     for (let i = 0; i < dataset.length; i++) {
         const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
         if (currentItem.includes(searchTerm1.toLowerCase())) {
-            resultsList1.push(dataset[i].country);
+            resultsList1.push(dataset[i].country +", ("+dataset[i].code+")");
 
             // Limit the results to 5
           if (resultsList1.length >= 5) {
