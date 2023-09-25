@@ -13,7 +13,23 @@ const resultsList1 = []
 const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
 
+//Create content box
+const addButton = document.getElementById("addBlockButton");
+const contentContainer = document.getElementById("searchMethods");
 
+// Function to add a new content block
+function addContentBlock() {
+    // Create a new div element
+    const newContentBlock = document.createElement("div");
+
+    // Set the content or attributes for the new block
+    newContentBlock.textContent = "New Content Block";
+
+    // Append the new block to the content container
+    contentContainer.appendChild(newContentBlock);
+}
+// Add an event listener to the button
+addButton.addEventListener("click", addContentBlock);
 
 //country/currency type set
 const dataset =[
