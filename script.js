@@ -28,8 +28,30 @@ function addContentBlock() {
     // Append the new block to the content container
     contentContainer.appendChild(newContentBlock);
 }
-// Add an event listener to the button
-addButton.addEventListener("click", addContentBlock);
+// Add an event listener to typing in the searches
+searchInput1.addEventListener("input", addContentBlock);
+searchInput2.addEventListener("input", addContentBlock);
+
+//Typing data set
+const conRes = []
+
+//content box searches
+function boxMatch (){
+  for (let i = 0; i < dataset.length; i++) {
+    const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
+    if (currentItem.includes(searchTerm1.toLowerCase())) {
+        conRes.push(dataset[i].country +", ("+dataset[i].code+")");
+        newContentBlock.appendChild(conRes)
+
+        // Limit the results to 5
+      if (resultsList1.length >= 5) {
+        break;
+      }
+    }
+}
+}
+
+
 
 //country/currency type set
 const dataset =[
