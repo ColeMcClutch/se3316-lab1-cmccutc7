@@ -14,23 +14,12 @@ const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
 
 //Create content box
-const addButton = document.getElementById("addBlockButton");
-const contentContainer = document.getElementById("searchMethods");
-
-// Function to add a new content block
-function addContentBlock() {
-    // Create a new div element
-    const newContentBlock = document.createElement("div");
-
-    // Set the content or attributes for the new block
-    newContentBlock.textContent = "New Content Block";
-
-    // Append the new block to the content container
-    contentContainer.appendChild(newContentBlock);
-}
-// Add an event listener to typing in the searches
-searchInput1.addEventListener("input", addContentBlock);
-searchInput2.addEventListener("input", addContentBlock);
+const contentContainer = document.getElementById("searchMethods")
+const newContentBlock = document.createElement("div");
+// Set the content or attributes for the new block
+newContentBlock.textContent = "New Content Block";
+// Append the new block to the content container
+contentContainer.appendChild(newContentBlock);
 
 //Typing data set
 const conRes = []
@@ -51,6 +40,29 @@ function boxMatch (){
 }
 }
 
+//element set
+const elset = [
+ a = document.getElementById("usa"), 
+ b = document.getElementById("can"),
+ c = document.getElementById("uk"),
+ d = document.getElementById("aus"),
+ e = document.getElementById("ind"),
+ f = document.getElementById("brz"),
+ g = document.getElementById("chn"),
+ h = document.getElementById("rus"),
+ i = document.getElementById("fra"),
+ j = document.getElementById("ger"),
+ k = document.getElementById("jpn"),
+ l = document.getElementById("saf"),
+ m = document.getElementById("mex"),
+ n = document.getElementById("it"),
+ o = document.getElementById("arg"),
+ p = document.getElementById("spn"),
+ q = document.getElementById("sab"),
+ r = document.getElementById("nga"),
+ s = document.getElementById("sk"),
+ t = document.getElementById("egy")
+]
 
 
 //country/currency type set
