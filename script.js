@@ -29,7 +29,7 @@ function boxMatch (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchTerm1.toLowerCase())) {
-        conRes.push(dataset[i].country +", ("+dataset[i].code+")");
+        conRes.push(elset[i]);
         newContentBlock.appendChild(conRes)
 
         // Limit the results to 5
