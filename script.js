@@ -13,25 +13,77 @@ const resultsList1 = []
 const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
 
-function createBlock(){
-  //Create content box
-  const contentContainer = document.getElementById("searchMethods")
-  const newContentBlock = document.createElement("div");
-  // Set the content or attributes for the new block
-  newContentBlock.textContent = "New Content Block";
-  // Append the new block to the content container
-  contentContainer.appendChild(newContentBlock);
-}
-//Typing data set
-const conRes = []
+//element set
+const elset = [
+  a = document.getElementById("usa"), 
+  b = document.getElementById("can"),
+  c = document.getElementById("uk"),
+  d = document.getElementById("aus"),
+  e = document.getElementById("ind"),
+  f = document.getElementById("brz"),
+  g = document.getElementById("chn"),
+  h = document.getElementById("rus"),
+  i = document.getElementById("fra"),
+  j = document.getElementById("ger"),
+  k = document.getElementById("jpn"),
+  l = document.getElementById("saf"),
+  m = document.getElementById("mex"),
+  n = document.getElementById("it"),
+  o = document.getElementById("arg"),
+  p = document.getElementById("spn"),
+  q = document.getElementById("sab"),
+  r = document.getElementById("nga"),
+  s = document.getElementById("sk"),
+  t = document.getElementById("egy")
+ ]
+ 
+ 
+ //country/currency type set
+ const dataset =[
+   {country:'United States of America',code: 'USD'},
+   {country:'Canada',code: 'CAD'},
+   {country:'United Kingdom',code: 'GBP'},
+   {country:'Japan',code:'JPY'},
+   {country:'Austrailia',code:'AUD'},
+   {country:'Italy' ,code:'EUR'},
+   {country:'France' ,code:'EUR'},
+   {country:'Germany' ,code:'EUR'},
+   {country:'Spain' ,code:'EUR'},
+   {country: 'India',code:'INR'},
+   {country:'Brazil', code:'BRL'},
+   {country: 'China',code:'CNY'},
+   {country:'Russia',code:'RUB'},
+   {country:'South Africa', code:'ZAR'},
+   {country:'Mexico',code:'MXN'},
+   {country:'Argentina',code:'ARS'},
+   {country:'Saudi Arabia',code:'SAR'},
+   {country:'Nigeria',code:'NGN'},
+   {country:'South Korea',code:'KRW'},
+   {country:'Egypt',code:'EGP'}
+ ]
+ 
+
+// Wrap your code in a DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", function() {
+//Create content box
+const contentContainer = document.getElementById('container')
+const newContentBlock = document.createElement('div');
+
+console.log(contentContainer)
+  
+// Set the content or attributes for the new block
+newContentBlock.textContent = "New Content Block";
+// Append the new block to the content container
+contentContainer.appendChild(newContentBlock);
+
+})
 
 //content box searches
 function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.toLowerCase())) {
-        conRes.push(elset[i]);
-        newContentBlock.appendChild(conRes)
+        newContentBlock.appendChild(elset[i])
 
         // Limit the results to 5
       if (resultsList1.length >= 5) {
@@ -46,8 +98,7 @@ function boxMatch2 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.toLowerCase())) {
-        conRes.push(elset[i]);
-        newContentBlock.appendChild(conRes)
+        newContentBlock.appendChild(elset[i])
 
         // Limit the results to 5
       if (resultsList1.length >= 5) {
@@ -59,62 +110,12 @@ function boxMatch2 (){
 
 
 //Content name box 
-searchInput1.addEventListener("input",createBlock())
 searchInput1.addEventListener("input",boxMatch1())
 
 //Content name box 
-searchInput1.addEventListener("input",createBlock())
 searchInput1.addEventListener("input",boxMatch2())
 
 
-//element set
-const elset = [
- a = document.getElementById("usa"), 
- b = document.getElementById("can"),
- c = document.getElementById("uk"),
- d = document.getElementById("aus"),
- e = document.getElementById("ind"),
- f = document.getElementById("brz"),
- g = document.getElementById("chn"),
- h = document.getElementById("rus"),
- i = document.getElementById("fra"),
- j = document.getElementById("ger"),
- k = document.getElementById("jpn"),
- l = document.getElementById("saf"),
- m = document.getElementById("mex"),
- n = document.getElementById("it"),
- o = document.getElementById("arg"),
- p = document.getElementById("spn"),
- q = document.getElementById("sab"),
- r = document.getElementById("nga"),
- s = document.getElementById("sk"),
- t = document.getElementById("egy")
-]
-
-
-//country/currency type set
-const dataset =[
-  {country:'United States of America',code: 'USD'},
-  {country:'Canada',code: 'CAD'},
-  {country:'United Kingdom',code: 'GBP'},
-  {country:'Japan',code:'JPY'},
-  {country:'Austrailia',code:'AUD'},
-  {country:'Italy' ,code:'EUR'},
-  {country:'France' ,code:'EUR'},
-  {country:'Germany' ,code:'EUR'},
-  {country:'Spain' ,code:'EUR'},
-  {country: 'India',code:'INR'},
-  {country:'Brazil', code:'BRL'},
-  {country: 'China',code:'CNY'},
-  {country:'Russia',code:'RUB'},
-  {country:'South Africa', code:'ZAR'},
-  {country:'Mexico',code:'MXN'},
-  {country:'Argentina',code:'ARS'},
-  {country:'Saudi Arabia',code:'SAR'},
-  {country:'Nigeria',code:'NGN'},
-  {country:'South Korea',code:'KRW'},
-  {country:'Egypt',code:'EGP'}
-]
 
 //Places functions into click operations
 button1.addEventListener('click', function(){performSearch1()})
