@@ -13,22 +13,23 @@ const resultsList1 = []
 const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
 
-//Create content box
-const contentContainer = document.getElementById("searchMethods")
-const newContentBlock = document.createElement("div");
-// Set the content or attributes for the new block
-newContentBlock.textContent = "New Content Block";
-// Append the new block to the content container
-contentContainer.appendChild(newContentBlock);
-
+function createBlock(){
+  //Create content box
+  const contentContainer = document.getElementById("searchMethods")
+  const newContentBlock = document.createElement("div");
+  // Set the content or attributes for the new block
+  newContentBlock.textContent = "New Content Block";
+  // Append the new block to the content container
+  contentContainer.appendChild(newContentBlock);
+}
 //Typing data set
 const conRes = []
 
 //content box searches
-function boxMatch (){
+function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
-    if (currentItem.includes(searchTerm1.toLowerCase())) {
+    if (currentItem.includes(searchInput1.toLowerCase())) {
         conRes.push(elset[i]);
         newContentBlock.appendChild(conRes)
 
@@ -39,6 +40,32 @@ function boxMatch (){
     }
 }
 }
+
+//content box searches
+function boxMatch2 (){
+  for (let i = 0; i < dataset.length; i++) {
+    const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
+    if (currentItem.includes(searchInput1.toLowerCase())) {
+        conRes.push(elset[i]);
+        newContentBlock.appendChild(conRes)
+
+        // Limit the results to 5
+      if (resultsList1.length >= 5) {
+        break;
+      }
+    }
+}
+}
+
+
+//Content name box 
+searchInput1.addEventListener("input",createBlock())
+searchInput1.addEventListener("input",boxMatch1())
+
+//Content name box 
+searchInput1.addEventListener("input",createBlock())
+searchInput1.addEventListener("input",boxMatch2())
+
 
 //element set
 const elset = [
