@@ -18,19 +18,19 @@ const elset = [
   a = document.getElementById("usa"), 
   b = document.getElementById("can"),
   c = document.getElementById("uk"),
+  k = document.getElementById("jpn"),
   d = document.getElementById("aus"),
+  n = document.getElementById("it"),
+  i = document.getElementById("fra"),
+  j = document.getElementById("ger"),
+  p = document.getElementById("spn"),
   e = document.getElementById("ind"),
   f = document.getElementById("brz"),
   g = document.getElementById("chn"),
   h = document.getElementById("rus"),
-  i = document.getElementById("fra"),
-  j = document.getElementById("ger"),
-  k = document.getElementById("jpn"),
   l = document.getElementById("saf"),
   m = document.getElementById("mex"),
-  n = document.getElementById("it"),
   o = document.getElementById("arg"),
-  p = document.getElementById("spn"),
   q = document.getElementById("sab"),
   r = document.getElementById("nga"),
   s = document.getElementById("sk"),
@@ -62,12 +62,11 @@ const elset = [
    {country:'Egypt',code:'EGP'}
  ]
  
-
 // Wrap your code in a DOMContentLoaded event listener
-document.addEventListener("DOMContentLoaded", function() {
+
 //Create content box
 const contentContainer = document.getElementById('container')
-const newContentBlock = document.createElement('div');
+const newContentBlock = document.createElement("div");
 
 console.log(contentContainer)
   
@@ -76,13 +75,12 @@ newContentBlock.textContent = "New Content Block";
 // Append the new block to the content container
 contentContainer.appendChild(newContentBlock);
 
-})
 
 //content box searches
 function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
-    if (currentItem.includes(searchInput1.toLowerCase())) {
+    if (currentItem.includes(searchInput1.value.toLowerCase())) {
         newContentBlock.appendChild(elset[i])
 
         // Limit the results to 5
@@ -97,7 +95,7 @@ function boxMatch1 (){
 function boxMatch2 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
-    if (currentItem.includes(searchInput1.toLowerCase())) {
+    if (currentItem.includes(searchInput2.toLowerCase())) {
         newContentBlock.appendChild(elset[i])
 
         // Limit the results to 5
