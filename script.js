@@ -14,29 +14,8 @@ const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
 
 //element set
-const elset = [
-  a = document.getElementById("usa"), 
-  b = document.getElementById("can"),
-  c = document.getElementById("uk"),
-  k = document.getElementById("jpn"),
-  d = document.getElementById("aus"),
-  n = document.getElementById("it"),
-  i = document.getElementById("fra"),
-  j = document.getElementById("ger"),
-  p = document.getElementById("spn"),
-  e = document.getElementById("ind"),
-  f = document.getElementById("brz"),
-  g = document.getElementById("chn"),
-  h = document.getElementById("rus"),
-  l = document.getElementById("saf"),
-  m = document.getElementById("mex"),
-  o = document.getElementById("arg"),
-  q = document.getElementById("sab"),
-  r = document.getElementById("nga"),
-  s = document.getElementById("sk"),
-  t = document.getElementById("egy")
- ]
- 
+const nodelist = document.querySelectorAll("column")
+const nodeArray = Array.from(nodelist) 
  
  //country/currency type set
  const dataset =[
@@ -81,7 +60,7 @@ function boxMatch1 (){
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.value.toLowerCase())) {
       const container = document.createElement('div')
-      container.appendChild(elset[i])
+      container.appendChild(nodeArray[i])
       newContentBlock.appendChild(container)
 
         // Limit the results to 5
@@ -98,7 +77,7 @@ function boxMatch2 (){
     const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput2.toLowerCase())) {
       const container = document.createElement('div')
-        container.appendChild(elset[i])
+        container.appendChild(nodeArray[i])
         newContentBlock.appendChild(container)
 
         // Limit the results to 5
@@ -111,10 +90,10 @@ function boxMatch2 (){
 
 
 //Content name box 
-searchInput1.addEventListener("input",boxMatch1())
+searchInput1.addEventListener("input",boxMatch1)
 
 //Content name box 
-searchInput1.addEventListener("input",boxMatch2())
+searchInput1.addEventListener("input",boxMatch2)
 
 
 
