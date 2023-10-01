@@ -65,10 +65,9 @@ const elset = [
 // Wrap your code in a DOMContentLoaded event listener
 
 //Create content box
-const contentContainer = document.getElementById('container')
+const contentContainer = document.getElementById('content-block')
 const newContentBlock = document.createElement("div");
 
-console.log(contentContainer)
   
 // Set the content or attributes for the new block
 newContentBlock.textContent = "New Content Block";
@@ -81,7 +80,9 @@ function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.value.toLowerCase())) {
-        newContentBlock.appendChild(elset[i])
+      const container = document.createElement('div')
+      container.appendChild(elset[i])
+      newContentBlock.appendChild(container)
 
         // Limit the results to 5
       if (resultsList1.length >= 5) {
@@ -96,7 +97,9 @@ function boxMatch2 (){
   for (let i = 0; i < dataset.length; i++) {
     const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput2.toLowerCase())) {
-        newContentBlock.appendChild(elset[i])
+      const container = document.createElement('div')
+        container.appendChild(elset[i])
+        newContentBlock.appendChild(container)
 
         // Limit the results to 5
       if (resultsList1.length >= 5) {

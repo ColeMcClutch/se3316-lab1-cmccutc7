@@ -71,3 +71,9 @@ body{
   display: flex;
   align-items: center;
 }
+
+#content-block{
+  font-size: 16px;
+  background-color: gray;
+  height: 20px;
+}
