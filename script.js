@@ -55,9 +55,9 @@ contentContainer.appendChild(newContentBlock);
 //content box searches
 function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
-    const currentItem = nodeArray[i].id.toLowerCase(); // Convert to lowercase for case-insensitive search
+    const currentItem = nodeArray[i].getAttribute('id').toLowerCase() // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.value.toLowerCase())) {
-      const container = document.createElement('div')
+      const container = document.createElement('div.content-block')
       container.appendChild(nodeArray[i])
       newContentBlock.appendChild(container)
 
@@ -72,7 +72,7 @@ function boxMatch1 (){
 //content box searches
 function boxMatch2 (){
   for (let i = 0; i < dataset.length; i++) {
-    const currentItem = nodeArray[i].id.toLowerCase(); // Convert to lowercase for case-insensitive search
+    const currentItem = nodeArray[i].getAttribute('id)').toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput2.value.toLowerCase())) {
       const container = document.createElement('div')
       const cloneNode = nodeArray[i].cloneNode(true)
