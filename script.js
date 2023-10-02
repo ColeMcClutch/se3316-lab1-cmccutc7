@@ -75,7 +75,8 @@ function boxMatch2 (){
     const currentItem = nodeArray[i].id.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput2.value.toLowerCase())) {
       const container = document.createElement('div')
-        container.appendChild(nodeArray[i])
+      const cloneNode = nodeArray[i].cloneNode(true)
+        container.appendChild(cloneNode)
         newContentBlock.appendChild(container)
 
         // Limit the results to 5
