@@ -12,10 +12,6 @@ const resultsList1 = []
 //Gets References for currency
 const searchInput2 = document.getElementById('cuName')
 const resultsList2 = []
-
-//element set
-const nodelist = document.querySelectorAll("column")
-const nodeArray = Array.from(nodelist) 
  
  //country/currency type set
  const dataset =[
@@ -41,7 +37,9 @@ const nodeArray = Array.from(nodelist)
    {country:'Egypt',code:'EGP'}
  ]
  
-// Wrap your code in a DOMContentLoaded event listener
+//node set
+const nodelist = document.querySelectorAll('div.column')
+const nodeArray = Array.from(nodelist) 
 
 //Create content box
 const contentContainer = document.getElementById('content-block')
@@ -57,7 +55,7 @@ contentContainer.appendChild(newContentBlock);
 //content box searches
 function boxMatch1 (){
   for (let i = 0; i < dataset.length; i++) {
-    const currentItem = dataset[i].country.toLowerCase(); // Convert to lowercase for case-insensitive search
+    const currentItem = nodeArray[i].id.toLowerCase(); // Convert to lowercase for case-insensitive search
     if (currentItem.includes(searchInput1.value.toLowerCase())) {
       const container = document.createElement('div')
       container.appendChild(nodeArray[i])
@@ -74,8 +72,8 @@ function boxMatch1 (){
 //content box searches
 function boxMatch2 (){
   for (let i = 0; i < dataset.length; i++) {
-    const currentItem = dataset[i].code.toLowerCase(); // Convert to lowercase for case-insensitive search
-    if (currentItem.includes(searchInput2.toLowerCase())) {
+    const currentItem = nodeArray[i].id.toLowerCase(); // Convert to lowercase for case-insensitive search
+    if (currentItem.includes(searchInput2.value.toLowerCase())) {
       const container = document.createElement('div')
         container.appendChild(nodeArray[i])
         newContentBlock.appendChild(container)
@@ -93,7 +91,7 @@ function boxMatch2 (){
 searchInput1.addEventListener("input",boxMatch1)
 
 //Content name box 
-searchInput1.addEventListener("input",boxMatch2)
+searchInput2.addEventListener("input",boxMatch2)
 
 
 
