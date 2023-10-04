@@ -1,27 +1,5 @@
-#submit1{
-  display:flex;
-  border: 1px solid;
-  padding: 8px;
-  background-color: blue;
-  color: white;
-  position: relative;
-  right: 20px;
-  
-}
-
 body{
   background-color: green;
-}
-
-#submit2{
-  display:flex;
-  border: 1px solid;
-  padding: 8px;
-  background-color: blue;
-  color: white;
-  position: relative;
-  right: 20px;
-  
 }
 
 .coName{
