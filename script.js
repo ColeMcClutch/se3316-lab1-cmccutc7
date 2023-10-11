@@ -83,9 +83,9 @@ function boxMatch2 (){
     //Selects ID from elements in node array
 
   for (let i = 0; i < nodeArray.length; i++) {
-    const currentItem = nodeArray[i].querySelector('div[cuCode]'); 
+    const currentItem = nodeArray[i].querySelector('div[class]'); 
     if (currentItem){
-      const currentItemCode = currentItem.getAttribute('cuCode').toLowerCase()
+      const currentItemCode = currentItem.getAttribute('class').toLowerCase()
       if (currentItemCode){
         // Convert to lowercase for case-insensitive search
       if (currentItemCode.includes(searchInput2.value.toLowerCase())) {
